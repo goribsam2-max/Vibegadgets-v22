@@ -101,7 +101,7 @@ const EReceipt: React.FC = () => {
         <div className="mb-10 w-full flex flex-col items-center relative">
           <div className="absolute top-0 right-0">
              <div className="bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-full flex items-center space-x-2">
-                 <div className={`w-2 h-2 rounded-full ${order.status === 'processing' ? 'bg-amber-500 animate-pulse' : order.status === 'shipped' ? 'bg-blue-500' : order.status === 'delivered' ? 'bg-green-500' : order.status === 'cancelled' ? 'bg-red-500' : 'bg-green-500'}`} />
+                 <div className={`w-2 h-2 rounded-full ${order.status?.toLowerCase() === 'processing' ? 'bg-amber-500 animate-pulse' : order.status?.toLowerCase() === 'shipped' ? 'bg-blue-500' : order.status?.toLowerCase() === 'delivered' ? 'bg-green-500' : order.status?.toLowerCase() === 'cancelled' ? 'bg-red-500' : 'bg-green-500'}`} />
                  <span className="text-[10px] font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-widest">{order.status || 'Pending'}</span>
              </div>
           </div>

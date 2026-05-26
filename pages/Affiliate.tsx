@@ -33,6 +33,7 @@ import { TourProvider, TourAlertDialog, useTour } from "@/components/ui/tour";
 
 // GIF Generator
 import { generateStickerGif } from "../components/GifGenerator";
+import { formatPrice } from "../lib/utils";
 
 const tabsData: TabItem[] = [
   { id: "dashboard", title: "Dashboard", icon: LayoutDashboard as any },

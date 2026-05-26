@@ -125,12 +125,12 @@ const OrderActionPage: React.FC = () => {
               key={order.id}
               onClick={() => {
                 if (actionName === 'review') {
-                  navigate(`/leave-review?productId=${order.items[0]?.productId || order.items[0]?.id}`);
+                  navigate(`/leave-review?productId=${order.items[0]?.productId || (order.items[0] as any)?.id}`);
                 } else if (actionName === 'pay') {
                   const cartItems = order.items.map(item => ({
                     ...item,
-                    id: item.productId || item.id,
-                    price: item.price !== undefined ? Number(item.price) : Number((item as any).priceAtPurchase || 0)
+                    id: item.productId || (item as any).id,
+                    price: (item as any).price !== undefined ? Number((item as any).price) : Number((item as any).priceAtPurchase || 0)
                   }));
                   localStorage.setItem("f_cart", JSON.stringify(cartItems));
                   navigate('/checkout');

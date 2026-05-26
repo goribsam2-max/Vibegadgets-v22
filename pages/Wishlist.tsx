@@ -8,7 +8,8 @@ import {
   doc,
   deleteDoc,
 } from "firebase/firestore";
-import { auth, db } from "../firebase";
+import { db, auth } from "../firebase";
+import { formatPrice } from "../lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNotify } from "../components/Notifications";
 import Icon from "../components/Icon";
